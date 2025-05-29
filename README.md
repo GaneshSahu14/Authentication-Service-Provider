@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🔐 Authentication Service Provider
 
-## Getting Started
+A secure and scalable authentication system built from scratch — **no Firebase, Auth0, or third-party auth services**. This project provides a complete auth stack with user registration, login, logout, JWT-based session management, and multi-factor authentication (MFA).
 
-First, run the development server:
+---
+
+## 🚀 Features
+
+- 🔑 User Registration & Login
+- 🔐 Password hashing with bcrypt
+- 🧾 JWT-based session authentication
+- 📧 Email-based OTP verification (MFA)
+- 🚫 Secure token blacklist on logout
+- 🛡️ Role-based access control (RBAC)
+- 📈 Scalable for microservices & REST APIs
+
+---
+
+## ⚙️ Tech Stack
+
+| Layer       | Technology              |
+|-------------|--------------------------|
+| Backend     | Node.js, Express         |
+| Database    | MongoDB / PostgreSQL     |
+| Auth        | JWT, bcrypt, nodemailer  |
+| API Testing | Postman                  |
+| Deployment  | Render / Railway / Docker (optional) |
+
+---
+
+## 📂 Project Structure
+
+Authentication-Service-Provider/
+├── controllers/ # Business logic
+├── routes/ # API routes
+├── middleware/ # JWT & role guards
+├── models/ # DB models (User, Token)
+├── utils/ # Helper functions (OTP, Mail)
+├── .env.example # Env variables
+├── app.js # Main Express app
+└── README.md
+
+
+---
+
+## 🛠 Setup & Installation
+
+### 1️⃣ Clone the Repo
 
 ```bash
+git clone https://github.com/GaneshSahu14/Authentication-Service-Provider.git
+cd Authentication-Service-Provider
+
+2️⃣ Install Dependencies
+npm install
+
+3️⃣ Configure Environment Variables
+cp .env.example .env
+
+4️⃣ Start the Server
+bash
+Copy
+Edit
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Server runs at http://localhost:5000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🔐 API Endpoints
+Method	Endpoint	Description
+POST	/api/register	Register a new user
+POST	/api/login	Login with credentials
+POST	/api/verify-otp	Verify email OTP for MFA
+POST	/api/logout	Invalidate JWT
+GET	/api/protected	Example protected route
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Test with Postman collection (coming soon)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🧪 Testing
+bash
+Copy
+Edit
+npm run test
+🔮 Future Enhancements
+ OAuth2 / Google login
 
-## Learn More
+ Rate limiting & brute-force protection
 
-To learn more about Next.js, take a look at the following resources:
+ Admin dashboard
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+ Refresh token implementation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+ Mobile OTP login
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+🧑‍💻 Author
+Built with care by Ganesh Sahu
