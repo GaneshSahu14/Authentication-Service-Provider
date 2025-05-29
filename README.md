@@ -91,4 +91,6 @@ npm run test
  Mobile OTP login
 
 🧑‍💻 Author
-Built with care by Ganesh Sahu
+Made with ❤️ by Ganesh Sahu
+
+Feel free to fork, open issues, suggest improvements, or give a ⭐ if you found this project helpful!
